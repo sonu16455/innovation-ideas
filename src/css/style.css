@@ -2,3 +2,7 @@ body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color:lightsalmon;
 }
+div{
+    border: 1px solid black;
+    color: blue;
+}
