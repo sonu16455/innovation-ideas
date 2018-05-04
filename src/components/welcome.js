@@ -1,6 +1,9 @@
 import React from 'react';
 
 class Welcome extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render(){
         return(
             <React.Fragment>
@@ -8,7 +11,7 @@ class Welcome extends React.Component {
                     <div className="myNav">
                         <div className="myflex">
                             <div className="left">
-                                <img src="src/images/backgroundimage/logo.jpg" width="50px" height="50px"/>
+                                <img src="src/images/backgroundimage/logo.jpg" width="50px" height="50px" alt="Welcome"/>
                             </div>
                             <div className="right">
                                 <button>About Us</button>
