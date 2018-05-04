@@ -1,10 +1,9 @@
 import React from 'react';
 
-class Welcome extends React.Component {
+class Signup extends React.Component {
     render(){
         return(
             <React.Fragment>
-                <div className="welcomePageImage">
                     <div className="myNav">
                         <div className="myflex">
                             <div className="left">
@@ -12,16 +11,21 @@ class Welcome extends React.Component {
                             </div>
                             <div className="right">
                                 <button>About Us</button>
-                                <button>Sign Up</button>
                                 <button>Log In</button>
                             </div>
-                     </div>
-                 </div>
-                    <div  className="welcomeDesc">Its working</div>
+                        </div>
+                   </div>
+                <div className="signuppageimage">
+                    <div>
+                        <input type="email" placeholder="Enter your Email here"/>
+                        <input type="password" placeholder="Enter your password here"/>
+                        <input type="password" placeholder="Enter your Confirm password here"/>
+                    </div>
                 </div>
             </React.Fragment>
         )
     }
+
 }
 
-export default Welcome;
+export default Signup;
