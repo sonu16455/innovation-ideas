@@ -1,8 +1,58 @@
 body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color:lightsalmon;
+    margin: 0 auto;
 }
-div{
-    border: 1px solid black;
+.welcomePageImage{
+    background-image: url('./../images/backgroundimage/welcome.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.myNav{
+    background: azure;
+    color: #000 !important;
+    text-align: center
+    
+}
+.welcomePageImage .welcomeDesc{
+    color: #fff !important;
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 200px;
+    padding: 14px 33px;
+}
+.myflex{
+    display: flex;
+    align-items: stretch;
+    background: #3cc
+}
+.myflex > div{
+    /* background: red; */
+    width: 50%;
     color: blue;
+    margin: 10px;
+    text-align: center;
+} 
+.right button{
+    background: #3cc;
+    padding: 10px 20px;
+    margin:10px   2px;
+    cursor: pointer;
+    border: 1px solid Green;
+}
+.left{
+    text-align: left !important;
+    padding-left: 30px;
+}
+.navebar{
+    height:'200px';
+    background: black
+}
+.signuppageimage{
+    background-image: url('./../images/backgroundimage/signup.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
