@@ -1,7 +1,7 @@
 {
   "name": "innovation-ideas",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.jsx",
   "repository": "https://github.com/innovationdemos/innovation-ideas.git",
   "author": "Kasiriveni <kasiriveni@gmail.com>",
   "license": "MIT",

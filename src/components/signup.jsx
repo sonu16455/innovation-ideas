@@ -1,13 +1,14 @@
 import React from 'react';
 
 class Signup extends React.Component {
+    
     render(){
         return(
             <React.Fragment>
                     <div className="myNav">
                         <div className="myflex">
                             <div className="left">
-                                <img src="src/images/backgroundimage/logo.jpg" width="50px" height="50px"/>
+                                <img src="src/images/backgroundimage/logo.jpg" width="50px" height="50px" alt="SignUp"/>
                             </div>
                             <div className="right">
                                 <button>About Us</button>
