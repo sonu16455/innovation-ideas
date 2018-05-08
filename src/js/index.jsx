@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 import Welcome from '../components/welcome.jsx';
+// import Signup from '../components/signup.jsx';
+// import Login from '../components/login.jsx';
+// import Wrong from '../components/wrong.jsx';
 import '../css/style.css';
 
 const root = document.getElementById('root');
 
 ReactDOM.render(
-  <Welcome />,
+  // <Signup />,
+ // <Login />,
+//  <Wrong/>
+ <Router>
+   <Welcome />
+ </Router>
+  ,
   root,
 );
 
