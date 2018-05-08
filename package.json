@@ -6,11 +6,12 @@
   "author": "Kasiriveni <kasiriveni@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "prod": "webpack-dev-server --mode production",
+    "start": "webpack --mode development",
+    "prod": "webpack --mode production",
     "watch": "webpack --watch --mode development",
     "lint": "eslint --fix src/**/**.js",
-    "test": "jest"
+    "test": "jest",
+    "server":"webpack-dev-server --mode development"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
