@@ -19,5 +19,9 @@ module.exports={
           },
           { test: /\.(png|woff|woff2|eot|ttf|svg|jpeg|jpg)$/, loader: 'url-loader?limit=100000' }
         ]
-      }
+      },
+      devServer: {
+        port: 8000,
+        historyApiFallback: true
+      },
 }

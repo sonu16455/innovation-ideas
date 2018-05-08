@@ -1,26 +1,22 @@
 import React from 'react';
+import {BrowserRouter as Router,StaticRouter,Route,Link,Switch} from 'react-router-dom';
+import Signup from '../components/signup.jsx';
+import Login from '../components/login.jsx';
+import About from '../components/about.jsx';
+import Wrong from '../components/wrong.jsx';
 
 class Welcome extends React.Component {
   
     render(){
         return(
-            <React.Fragment>
-                <div className="welcomePageImage">
-                    <div className="myNav">
-                        <div className="myflex">
-                            <div className="left">
-                                <img src="src/images/backgroundimage/logo.jpg" width="50px" height="50px" alt="Welcome"/>
-                            </div>
-                            <div className="right">
-                                <button>About Us</button>
-                                <button>Sign Up</button>
-                                <button>Log In</button>
-                            </div>
-                     </div>
-                 </div>
-                    <div  className="welcomeDesc">Its working</div>
-                </div>
-            </React.Fragment>
+            <Switch>
+                {/* <Route exact path="/" component={Home}/> */}
+                {/* <Route path="/aboutUs" component={About}/> */}
+                <Route exact path="/" component={About}/>
+                <Route path="/signup" component={Signup}/>
+                <Route path="/login" component={Login}/>
+                <Route path="*" component={Wrong}/>
+            </Switch>
         )
     }
 }
