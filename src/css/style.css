@@ -1,58 +1,139 @@
 body{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0 auto;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+margin: 0 auto;
 }
 .welcomePageImage{
-    background-image: url('./../images/backgroundimage/welcome.jpeg');
+background-image: url('./../images/backgroundimage/welcome.jpeg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100vh;
+}
+.loginPageImage{
+    background-image: url('./../images/backgroundimage/login.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
 }
 .myNav{
-    background: azure;
-    color: #000 !important;
-    text-align: center
-    
+background: azure;
+color: #000 !important;
+text-align: center;  
 }
 .welcomePageImage .welcomeDesc{
-    color: #fff !important;
-    font-size: 18px;
-    line-height: 25px;
-    margin-top: 200px;
-    padding: 14px 33px;
+color:rgb(51, 204, 204) ;
+font-size: 18px;
+line-height: 25px;
+padding: 14px 33px;
+background: #797979bf;
+width: 40%;
+margin: 0 auto;
+margin-top: 10%;
+border:1px solid #ffffff85;
 }
 .myflex{
-    display: flex;
-    align-items: stretch;
-    background: #3cc
+display: flex;
+align-items: stretch;
+background: #3cc
 }
 .myflex > div{
-    /* background: red; */
-    width: 50%;
-    color: blue;
-    margin: 10px;
-    text-align: center;
+/* background: red; */
+width: 50%;
+color: blue;
+margin: 10px;
+text-align: center;
 } 
 .right button{
-    background: #3cc;
-    padding: 10px 20px;
-    margin:10px   2px;
-    cursor: pointer;
-    border: 1px solid Green;
+background: #3cc;
+padding: 10px 20px;
+margin:10px   2px;
+cursor: pointer;
+border: 1px solid Green;
 }
 .left{
-    text-align: left !important;
-    padding-left: 30px;
+text-align: left !important;
+padding-left: 30px;
 }
 .navebar{
-    height:'200px';
-    background: black
+height:'200px';
+background: black
 }
 .signuppageimage{
-    background-image: url('./../images/backgroundimage/signup.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+background-image: url('./../images/backgroundimage/signup.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100vh;
+}
+.inputboxsignup{
+border:1px solid black;
+width:290px;
+height: 30px;
+text-align: center;
+}
+button:hover {
+opacity:1;
+}
+.inputinsignup {
+margin: 0 auto;
+width: 300px;
+padding-top: 70px;
+}
+.inputinsignup input{
+margin-top: 12px;
+padding: 5px 10px;
+border: none;
+border-radius: 6px;
+}
+.inputinsignup button{
+margin-top: 12px;
+padding: 5px 10px !important;
+border: none;
+border-radius: 6px;
+width: 103%;
+height: 38px;
+}
+.login{
+width: 280px;
+margin: 0 auto;
+}
+.login input{
+text-align: center;
+width: 100%;
+border: 1px solid #ccc;;
+padding: 10px 12px;
+border-radius:5px;
+margin-top:10px; 
+box-shadow: #222;
+font-size: 16px;
+font-family: Arial, Helvetica, sans-serif
+}
+.login input:focus{
+-moz-box-shadow: 9px 9px 6px #7177e6;
+-webkit-box-shadow: 9px 9px 6px #7177e6;
+box-shadow: 9px 9px 6px #7177e6;
+}
+.btnwrap button{
+width: 109%;
+border: 1px solid #ccc;;
+padding: 10px 60px;
+border-radius:5px;
+margin-top:15px; 
+box-shadow: #222;
+}
+
+.btnwrap button:focus{
+-moz-box-shadow: 10px 10px 5px #078507;
+-webkit-box-shadow: 10px 10px 5px #078507;
+box-shadow: 10px 10px 5px #078507;
+}
+
+.env, .pass {
+position: relative;
+top: 39px;
+left: 13px;
+}
+.notfound{
+    text-align: center;
 }
