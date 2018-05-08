@@ -16,7 +16,7 @@ export default class About extends Component {
                     </div>
                 </div>
              </div>
-            <div  className="welcomeDesc">Everyone has at least one idea for the next big thing. What makes startup founders different is their willingness to take action to make one of those ideas a reality.</div>
+            <div  className="welcomeDesc">Everyone has at least one idea for the next big thing.What makes startup founders different is their willingness to take action to make one of those ideas a reality.</div>
         </div>
     )
   }
