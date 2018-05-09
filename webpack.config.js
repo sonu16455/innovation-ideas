@@ -1,5 +1,5 @@
-const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const path = require("path")
+const CleanWebpackPlugin = require("clean-webpack-plugin")
 
 module.exports = {
 	entry: "./src/js/index.jsx",
@@ -29,4 +29,4 @@ module.exports = {
 		historyApiFallback: true
 	},
 	plugins: [new CleanWebpackPlugin("./dist")]
-};
+}

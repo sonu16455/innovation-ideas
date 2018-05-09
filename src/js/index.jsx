@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import Welcome from '../components/welcome.jsx';
 // import Signup from '../components/signup.jsx';
@@ -12,12 +12,10 @@ const root = document.getElementById('root');
 
 ReactDOM.render(
   // <Signup />,
- // <Login />,
-//  <Wrong/>
- <Router>
-   <Welcome />
- </Router>
-  ,
-  root,
+  // <Login />,
+  //  <Wrong/>
+  <Router>
+    <Welcome />
+  </Router>,
+  root
 );
-
