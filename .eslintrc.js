@@ -1,6 +1,7 @@
 module.exports = {
 	extends: 'airbnb',
 	plugins: ['prettier'],
+<<<<<<< HEAD
 	env:{
 		"browser": true
 	},
@@ -11,5 +12,9 @@ module.exports = {
 			"components": [ "Link" ],
 			"specialLink": [ "to" ]
 		  }]
+=======
+	rules: {
+		'prettier/prettier': 'error',
+>>>>>>> dev
 	},
 };
