@@ -10,7 +10,8 @@
 		"prod": "webpack --mode production",
 		"lint": "eslint --fix src/**/**.jsx",
 		"test": "jest",
-		"server": "webpack --watch --mode development"
+		"server": "webpack --watch --mode development",
+		"formater": " prettier ./src/**/*.js --write "
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
