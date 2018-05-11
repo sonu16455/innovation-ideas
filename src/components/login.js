@@ -82,7 +82,7 @@ export default class Login extends React.Component {
 
               <div className="btnwrap">
                 {/* <button onClick = {this.resetForm} type ="button">Cancel</button>  */}
-                <button type="submit">Submit</button>
+                <button type="submit" disabled={!this.state.emailID && this.state.password.length<5}>Submit</button>
               </div>
             </form>
           </div>
