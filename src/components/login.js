@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Link} from 'react-router-dom';
+import Axios from 'axios';
+import Dashboard from './Dashboard'
 
 export default class Login extends React.Component {
 	constructor(props) {
@@ -11,12 +13,36 @@ export default class Login extends React.Component {
 
 		this.handleInput = this.handleInput.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-
-		this.baseState = this.state;
 	}
 
+
+
+
 	handleSubmit(event) {
+		console.log(this.state);
 		event.preventDefault();
+
+		let collection = {}
+		collection.emailID = this.state.emailID,
+		collection.password = this.state.password
+		console.warn(collection);
+
+
+	let url = `http://192.168.43.2:8082/user/login?emailID=${this.state.emailID}&password=${this.state.password}`;
+	
+	Axios.get(url)
+      .then(res => {
+        console.log(res);
+		console.log(res.data);
+		if(res.data == "login success"){
+			this.props.history.push("/dashboard");
+		}else{
+			this.props.history.push("/login");
+		}
+      })
+     
+
+
 		this.setState({
 			emailID: '',
 			password: '',

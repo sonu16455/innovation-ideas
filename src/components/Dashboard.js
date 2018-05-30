@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 import styles from  '../css/style.css'
 // import 'test.css';
+
 
 class Dashboard extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: "",
-      idea: "",
+      username: "",
+      post: "",
       list: []
     }
     this.handlevent = this.handlevent.bind(this);
@@ -16,6 +18,14 @@ class Dashboard extends Component {
     this.deleteitem = this.deleteitem.bind(this);
   }
 
+    componentDidMount(){
+    Axios.get('http://192.168.43.2:8081/post')
+    .then(res => {const list = res.data.content;console.log(res.data);this.setState({list})})
+    .catch(error => {
+      console.log(error)})
+    } 
+
+  
 
   handlevent(event) {
     this.setState({
@@ -23,14 +33,14 @@ class Dashboard extends Component {
     })
   }
 
-  likeIdea(idea){
-    console.log(idea)
+  likeIdea(post){
+    console.log(post)
     const likeList = [...this.state.list];
-    likeList[idea].like = !likeList[idea].like;
-    if(likeList[idea].like){
-      likeList[idea].count = 1;
+    likeList[post].like = !likeList[post].like;
+    if(likeList[post].like){
+      likeList[post].count = 1;
     }else{
-      likeList[idea].count = 0;
+      likeList[post].count = 0;
     }
     this.setState({
       list:likeList
@@ -40,21 +50,30 @@ class Dashboard extends Component {
   submit(event){
     event.preventDefault();
     const data = {
-      name: this.state.name,
-      idea: this.state.idea,
-      like: false,
-      count: 0
+      username: this.state.username,
+      post: this.state.post,
+      likes: 0
     };
+    console.log(data);
+
+    Axios.post('http://192.168.43.2:8081/post',data)
+    .then(res=>{
+      console.log(res);
+      console.log(res.data);
+    })
+
     const ideas = this.state.list;
       ideas.push(data);
       this.setState({
         list:ideas
       });
       this.setState({
-          name:'',
-          idea:''
+        username:'',
+          post:''
       })
   }
+
+
   deleteitem(index) {
     const newList = [...this.state.list];
     newList.splice(index,1);
@@ -72,21 +91,21 @@ class Dashboard extends Component {
           <h2>Share your today's thought here</h2>
             </center>
           <form className="postform">
-            <div><input type="text" placeholder="Share Your Thoughts here ..." name="idea" className="inputcontainer" value={this.state.idea} onChange={this.handlevent} required/></div>
-            <div><input type="text" placeholder="Share Your Name here ..." name="name" className="author" value={this.state.name} onChange={this.handlevent} required/></div>
+            <div><input type="text" placeholder="Share Your Thoughts here ..." name="post" className="inputcontainer" value={this.state.post} onChange={this.handlevent} required/></div>
+            <div><input type="text" placeholder="Share Your Name here ..." name="username" className="author" value={this.state.username} onChange={this.handlevent} required/></div>
             <div><button onClick={this.submit}>Post</button></div>
           </form>
     </div>
-    <hr/>
+    <hr/> 
       {this.state.list.map((item,index)=>{
         return(
-          <div className="smallcointaier" key={item.name}>
+          <div className="smallcointaier" key={index}>
          <div className="closewraper"> 
             <i className="fa fa-close delete" onClick={()=>this.deleteitem(index)}></i>
           </div>
-            <q className='itemidea'>{item.idea}</q>
-            <footer className="signature">- {item.name}</footer>
-            <div className="countme"><i className="fa fa-thumbs-up like" onClick={()=>this.likeIdea(index)}></i>{item.count}</div>
+            <q className='itemidea'>{item.post}</q>
+            <footer className="signature">- {item.username}</footer>
+            <div className="countme"><i className="fa fa-thumbs-up like" onClick={()=>this.likeIdea(index)}></i>{item.likes}</div>
           </div>
         )
       })}

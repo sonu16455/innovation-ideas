@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import {FormErrors} from '../components/formErrors';
+import Axios from "axios";
 
 class Signup extends React.Component {
 	constructor(props) {
@@ -28,12 +29,28 @@ class Signup extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		this.setState({
-			emailID: '',
-			password: '',
-			name: '',
-			confirmpassword: '',
-		});
+		let data = {
+			"name": this.state.name,
+			"emailID": this.state.emailID,
+			"password": this.state.password
+		}
+		console.log(data);
+		Axios.post("http://192.168.43.2:8082/user/register",data)
+		.then(res => {
+			console.log(res);
+
+			if(res.data == "Registration Successful"){
+				this.props.history.push("/login");
+			}
+			else{
+				this.props.history.push("/signup");
+			}
+
+		  })
+		//   .catch(function (error) {
+		// 	console.log(error);
+		//   });
+		  
 	}
 
 	handleUserInput(e) {

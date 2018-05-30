@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router,Switch} from 'react-router-dom';
 import Welcome from '../components/welcome.js';
 import '../css/style.css';
 import Dashboard from '../components/Dashboard'
@@ -9,8 +9,7 @@ import Dashboard from '../components/Dashboard'
 ReactDOM.render(
 
 	<Router>
-		<Welcome />
+	<Welcome/>
 	</Router>,
-	// <Dashboard/>,
 	document.getElementById('root')
 );
