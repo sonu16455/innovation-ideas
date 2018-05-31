@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
 import Dashboard from './Dashboard'
+import style from '../css/style.css'
 
 export default class Login extends React.Component {
 	constructor(props) {
@@ -36,17 +37,31 @@ export default class Login extends React.Component {
 		console.log(res.data);
 		if(res.data == "login success"){
 			this.props.history.push("/dashboard");
-		}else{
-			this.props.history.push("/login");
 		}
+
+		else {
+			if(res.data == "login failed"){
+				document.getElementById("loginError").innerHTML = "Invalid EmailID or Password";
+				this.props.history.push("/login");
+				this.setState({
+					emailID: '',
+					password: ''
+				});
+			}
+			else{}
+		}
+		
+		// else{
+		// 	this.props.history.push("/login");
+		// }
       })
      
 
 
-		this.setState({
-			emailID: '',
-			password: '',
-		});
+		// this.setState({
+		// 	emailID: '',
+		// 	password: '',
+		// });
 	}
 
 	handleInput(event) {
@@ -105,6 +120,8 @@ export default class Login extends React.Component {
 									onChange={event => this.handleInput(event)}
 								/>
 							</label>
+
+							<p id = "loginError"></p>
 
 							<div className="btnwrap">
 								{/* <button onClick = {this.resetForm} type ="button">Cancel</button>  */}

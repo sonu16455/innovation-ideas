@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import {FormErrors} from '../components/formErrors';
 import Axios from "axios";
+import style from '../css/style.css';
 
 class Signup extends React.Component {
 	constructor(props) {
@@ -42,15 +43,24 @@ class Signup extends React.Component {
 			if(res.data == "Registration Successful"){
 				this.props.history.push("/login");
 			}
-			else{
-				this.props.history.push("/signup");
+			else {
+				if(res.data == "This email id is already registerd"){
+					document.getElementById("error").innerHTML = "This Email ID already Exists";
+					this.props.history.push("/signup");
+					this.setState({
+						emailID: '',
+						password: '',
+						name: '',
+						confirmpassword: ''
+					});
+				}
+				else{}
 			}
 
 		  })
-		//   .catch(function (error) {
-		// 	console.log(error);
-		//   });
+	
 		  
+
 	}
 
 	handleUserInput(e) {
@@ -216,6 +226,8 @@ class Signup extends React.Component {
 							<div className="error">
 								<FormErrors formErrors={this.state.formErrors} />
 							</div>
+
+							<p id = "error"></p>
 
 							<button
 								className="inputboxsignup"
